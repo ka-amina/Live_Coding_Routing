@@ -27,9 +27,7 @@ class Router extends Controller
     public function dispatch()
     {
         $uri = strtok($_SERVER['REQUEST_URI'], '?');
-        $full_uri=$_SERVER['REQUEST_URI'];
-        $query= parse_url($full_uri,PHP_URL_QUERY);
-        echo $query;
+        // var_dump($uri);
         $method =  $_SERVER['REQUEST_METHOD'];
         // print_r($this->routes);
         if (array_key_exists($uri, $this->routes[$method])) {
